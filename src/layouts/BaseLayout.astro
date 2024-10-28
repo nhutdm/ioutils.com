@@ -1,0 +1,19 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import BaseHead, { type Props as HeadProps } from "@/components/BaseHead.astro";
+
+export type Props = HeadProps;
+
+const { ...head } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead {...head} />
+    <ViewTransitions />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
